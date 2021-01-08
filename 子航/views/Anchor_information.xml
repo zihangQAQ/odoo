@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="Anchor_information_list">
+      <field name="name">主播信息</field>
+      <field name="model">anchor.information</field>
+      <field name="arch" type="xml">
+          <from>
+              <group>
+                <group>
+                  <field name="name"/>
+                </group>
+                <group>
+                  <field name="Operation_team"/>
+                  <field name="Operation_name"/>
+                </group>
+                <group>
+                  <field name="Join_time"/>
+                  <field name="Anchor_scheduling"/>
+                </group>
+              </group>
+          </from>
+      </field>
+    </record>
+
+
+
+
+
+    <!-- actions opening views on models -->
+
+
+
+
+
+
+    <!-- actions opening views on models -->
+
+<!--    <record model="ir.actions.act_window" id="Anchor_information_act_window">-->
+<!--      <field name="name">主播信息</field>-->
+<!--      <field name="res_model">anchor.information</field>-->
+<!--      <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+
+
+
+
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="子航.action_server">
+      <field name="name">子航 server</field>
+      <field name="model_id" ref="model_子航_子航"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+<!--    <menuitem name="主播销售数据" id="子航_menu_root" groups = "base.group_user" sequence = "10"/>-->
+<!--    <menuitem name="主播销售数据" id="sec_子航_menu"-->
+<!--              parent = "子航_menu_root"-->
+<!--              action="子航_act_window"-->
+<!--              sequence = "10"/>-->
+
+<!--    <menuitem name="主播分类" id="sec_zhubofenlei_menu_1"-->
+<!--              parent = "子航_menu_root"/>-->
+<!--    <menuitem name="主播分类" id="sec_zhubofenlei_menu_2"-->
+<!--              parent = "sec_zhubofenlei_menu_1"-->
+<!--              action="zhubofenlei_act_window"/>-->
+
+<!--    <menuitem name="主播信息" id="sec_Anchor_information_menu_1"-->
+<!--              parent="子航_menu_root"/>-->
+<!--    <menuitem name="主播信息" id="sec_Anchor_information_menu_2"-->
+<!--              parent="sec_Anchor_information_menu_1"-->
+<!--              action="Anchor_information_act_window"/>-->
+
+    <!-- menu categories -->
+
+
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="子航.menu_1_list" parent="子航.menu_1"
+              action="子航.action_window"/>
+    <menuitem name="Server to list" id="子航" parent="子航.menu_2"
+              action="子航.action_server"/>
+-->
+  </data>
+</odoo>
