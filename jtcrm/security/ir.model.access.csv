@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acc_crm_category,crm.category,model_crm_category,,1,1,1,1
+acc_crm_task,crm.task,model_crm_task,,1,1,1,1
