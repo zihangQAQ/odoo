@@ -1,0 +1,79 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="mhr.list">
+      <field name="name">mhr list</field>
+      <field name="model">mhr</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="name5"/>
+          <field name="name6"/>
+          <field name="name7"/>
+          <field name="name8"/>
+          <field name="name9"/>
+          <field name="name10"/>
+          <field name="name11"/>
+          <field name="name12"/>
+          <field name="name13"/>
+          <field name="name14"/>
+          <field name="name15"/>
+          <field name="name16"/>
+          <field name="name17"/>
+          <field name="name18"/>
+          <field name="is_done"/>
+          <field name="priority"/>
+          <field name="test_time"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="mhr.action_window">
+      <field name="name">mhr</field>
+      <field name="res_model">mhr</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="mhr.action_server">
+      <field name="name">mhr</field>
+      <field name="model_id" ref="model_mhr"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="HR" id="mhr.menu_root"/>
+-->
+    <!-- menu categories -->
+
+
+    <menuitem name="组织架构表" id="mhr.menu_1" parent="mhr.menu_root" sequence="0"/>
+    <menuitem name="组织架构表2" id="mhr.menu_2" parent="mhr.menu_root" sequence="1"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List" id="mhr.menu_1_list" parent="mhr.menu_1"
+              action="mhr.action_window"/>
+    <menuitem name="Server to list" id="mhr" parent="mhr.menu_2"
+              action="mhr.action_server"/>
+-->
+  </data>
+</odoo>
