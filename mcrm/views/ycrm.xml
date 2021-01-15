@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="YCRM_list">
+      <field name="name">商务CRM</field>
+      <field name="model">ycrm.crm</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="name5"/>
+          <field name="name6"/>
+          <field name="name7"/>
+          <field name="test_time"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>

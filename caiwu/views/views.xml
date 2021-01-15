@@ -1,0 +1,87 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="财务_list">
+      <field name="name">小 list</field>
+      <field name="model">zb</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="is_done"/>
+          <field name="is_done2"/>
+          <field name="priority"/>
+          <field name="test_time"/>
+          <field name="priority3"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="财务1_list">
+      <field name="name">喵 list </field>
+      <field name="model">zb1</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+
+
+        </tree>
+      </field>
+    </record>
+<!--&ndash;&gt;-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="cw_action_window">
+      <field name="name">发票号码</field>
+      <field name="res_model">cw</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+
+
+    <record model="ir.actions.act_window" id="cw1_action_window">
+      <field name="name">发票v任务ID</field>
+      <field name="res_model">cw1</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    <record model="ir.actions.server" id="caiwu.action_server">-->
+<!--      <field name="name">caiwu</field>-->
+<!--      <field name="model_id" ref="model_zb"/>-->
+<!--      <field name="state">code</field>-->
+<!--      <field name="code">-->
+<!--        action = {-->
+<!--          "type": "ir.actions.act_window",-->
+<!--          "view_mode": "tree,form",-->
+<!--          "res_model": model._name,-->
+<!--        }-->
+<!--      </field>-->
+<!--    </record>-->
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="财务" id="caiwu.menu_root"/>
+-->
+    <!-- menu categories -->
+
+    <menuitem name="发票号码钉钉登记" id="caiwu.menu_2" parent="caiwu.menu_root" sequence="0"  action="cw_action_window"/>
+    <menuitem name="发票v任务ID钉钉登记" id="caiwu.menu_1" parent="caiwu.menu_root" sequence="1"  action="cw1_action_window"/>
+
+-->
+    <!-- actions -->
+
+<!--    <menuitem name="12" id="caiwu.menu_1_list" parent="caiwu.menu_1"-->
+<!--              action="caiwu.action_window"/>-->
+<!--    <menuitem name="1123" id="caiwu" parent="caiwu.menu_2"-->
+<!--              action="caiwu.action_server"/>-->
+-->
+  </data>
+</odoo>

@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="选品库_list">
+      <field name="name">小 list</field>
+      <field name="model">xuanpinku</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="name5"/>
+          <field name="name6"/>
+          <field name="name7"/>
+          <field name="name8"/>
+          <field name="name9"/>
+          <field name="name10"/>
+          <field name="name11"/>
+          <field name="name12"/>
+          <field name="name13"/>
+          <field name="name14"/>
+          <field name="name15"/>
+          <field name="name16"/>
+          <field name="name17"/>
+          <field name="name18"/>
+          <field name="name19"/>
+          <field name="name20"/>
+          <field name="name21"/>
+          <field name="name22"/>
+          <field name="name23"/>
+          <field name="name24"/>
+          <field name="is_done"/>
+          <field name="test_time"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="选品库1_list">
+      <field name="name">喵 list </field>
+      <field name="model">xuanpinchi</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+
+
+        </tree>
+      </field>
+    </record>
+<!--&ndash;&gt;-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="选品库_action_window">
+      <field name="name">线上产品报备</field>
+      <field name="res_model">xuanpinku</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+
+
+    <record model="ir.actions.act_window" id="选品库1_action_window">
+      <field name="name">产品报备总表</field>
+      <field name="res_model">xuanpinchi</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    <record model="ir.actions.server" id="xpk.action_server">-->
+<!--      <field name="name">小喵ai</field>-->
+<!--      <field name="model_id" ref="model_xuanpinku"/>-->
+<!--      <field name="state">code</field>-->
+<!--      <field name="code">-->
+<!--        action = {-->
+<!--          "type": "ir.actions.act_window",-->
+<!--          "view_mode": "tree,form",-->
+<!--          "res_model": model._name,-->
+<!--        }-->
+<!--      </field>-->
+<!--    </record>-->
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="选品库" id="xpk.menu_root" web_icon= "xpk,static/description/icon.png"/>
+-->
+    <!-- menu categories -->
+
+    <menuitem name="线上产品报备登记表" id="xpk.menu_2" parent="xpk.menu_root" sequence="0"  action="选品库_action_window"/>
+    <menuitem name="产品报备登记表总表" id="xpk.menu_1" parent="xpk.menu_root" sequence="1"  action="选品库1_action_window"/>
+
+-->
+    <!-- actions -->
+
+<!--    <menuitem name="12" id="xpk.menu_1_list" parent="xpk.menu_1"-->
+<!--              action="xpk.action_window"/>-->
+<!--    <menuitem name="1123" id="xpk" parent="xpk.menu_2"-->
+<!--              action="xpk.action_server"/>-->
+-->
+  </data>
+</odoo>

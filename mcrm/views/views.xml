@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="mcrm_list">
+      <field name="name">商务部</field>
+      <field name="model">crm</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="is_done"/>
+          <field name="is_done2"/>
+          <field name="priority"/>
+          <field name="test_time"/>
+          <field name="priority3"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mcrm_act_window">
+      <field name="name">商务部</field>
+      <field name="res_model">crm</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ycrm_action_window">
+      <field name="name">商务CRM</field>
+      <field name="res_model">ycrm.crm</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="商务CRM" id="mcrm_menu_root"/>
+-->
+    <!-- menu categories -->
+
+<!--    <menuitem name="排期店铺明细" id="ycrm_menu_1" parent="mcrm_menu_root" sequence="2"/>-->
+    <menuitem name="客户管理crm2.0" id="mcrm_menu_1" parent="mcrm_menu_root" sequence="1"/>
+
+-->
+    <!-- actions -->
+
+    <menuitem name="客户管理" id="sec_mcrm_menu_1" parent="mcrm_menu_1"
+              action="mcrm_act_window"/>
+    <menuitem name="排期店铺明细" id="sec_YCRM_menu_1" parent="mcrm_menu_1"
+              action="ycrm_action_window"/>
+-->
+  </data>
+</odoo>

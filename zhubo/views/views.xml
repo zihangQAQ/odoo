@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="zhubo.list">
+      <field name="name">zhubo list</field>
+      <field name="model">zhubo</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="name5"/>
+          <field name="name6"/>
+          <field name="name7"/>
+          <field name="name8"/>
+          <field name="name9"/>
+          <field name="name10"/>
+          <field name="name11"/>
+          <field name="name12"/>
+          <field name="name13"/>
+          <field name="name14"/>
+          <field name="name15"/>
+          <field name="name16"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="zhubo.action_window">
+      <field name="name">zhubo</field>
+      <field name="res_model">zhubo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="zhubo.action_server">
+      <field name="name">zhubo</field>
+      <field name="model_id" ref="model_zhubo"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="主播" id="zhubo.menu_root"/>
+-->
+    <!-- menu categories -->
+
+
+    <menuitem name="主播推广位ID及商务/运营对接人信息" id="zhubo.menu_1" parent="zhubo.menu_root" sequence="0"/>
+    <menuitem name="主播推广位ID及商务/运营对接人信息2" id="zhubo.menu_2" parent="zhubo.menu_root" sequence="1"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="List" id="zhubo.menu_1_list" parent="zhubo.menu_1"
+              action="zhubo.action_window"/>
+    <menuitem name="Server to list" id="zhubo" parent="zhubo.menu_2"
+              action="zhubo.action_server"/>
+-->
+  </data>
+</odoo>

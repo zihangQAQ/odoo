@@ -1,0 +1,87 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="播出排期_list">
+      <field name="name">小 list</field>
+      <field name="model">bochupaiqi</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+          <field name="name2"/>
+          <field name="name3"/>
+          <field name="name4"/>
+          <field name="is_done"/>
+          <field name="is_done2"/>
+          <field name="priority"/>
+          <field name="test_time"/>
+          <field name="priority3"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="播出排期1_list">
+      <field name="name">喵 list </field>
+      <field name="model">bochupaiqi1</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name"/>
+
+
+        </tree>
+      </field>
+    </record>
+<!--&ndash;&gt;-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="bochupaiqi_action_window">
+      <field name="name">播出记录</field>
+      <field name="res_model">xuanpinku</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+
+
+    <record model="ir.actions.act_window" id="bochupaiqi1_action_window">
+      <field name="name">购物袋链接</field>
+      <field name="res_model">xuanpinchi</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    <record model="ir.actions.server" id="bcpq.action_server">-->
+<!--      <field name="name">bcpq</field>-->
+<!--      <field name="model_id" ref="model_xuanpinku"/>-->
+<!--      <field name="state">code</field>-->
+<!--      <field name="code">-->
+<!--        action = {-->
+<!--          "type": "ir.actions.act_window",-->
+<!--          "view_mode": "tree,form",-->
+<!--          "res_model": model._name,-->
+<!--        }-->
+<!--      </field>-->
+<!--    </record>-->
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="播出排期" id="kk喵.menu_root" web_icon= "kk喵,static/description/icon.png"/>
+-->
+    <!-- menu categories -->
+
+    <menuitem name="主播播出记录表" id="kk喵.menu_2" parent="kk喵.menu_root" sequence="0"  action="bochupaiqi_action_window"/>
+    <menuitem name="购物袋链接汇总" id="kk喵.menu_1" parent="kk喵.menu_root" sequence="1"  action="bochupaiqi1_action_window"/>
+
+-->
+    <!-- actions -->
+
+<!--    <menuitem name="12" id="kk小喵.menu_1_list" parent="kk小喵.menu_1"-->
+<!--              action="kk小喵.action_window"/>-->
+<!--    <menuitem name="1123" id="kk小喵" parent="kk小喵.menu_2"-->
+<!--              action="kk小喵.action_server"/>-->
+-->
+  </data>
+</odoo>
