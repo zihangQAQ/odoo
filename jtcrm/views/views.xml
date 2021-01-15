@@ -1,0 +1,386 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="crm_category_list">
+      <field name="name">Todo Category List</field>
+      <field name="model">crm.category</field>
+      <field name="arch" type="xml">
+        <tree string = "Todo Category">
+          <field name="name"/>
+          <field name="crm_count"/>
+          <field name="crm_ids" invisible ="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_category_form">
+      <field name="name">Todo Category Form</field>
+      <field name="model">crm.category</field>
+      <field name="arch" type  ='xml'>
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+              </group>
+              <group>
+                <field name="crm_count"/>
+                <field name="crm_ids" invisible ="1"/>
+              </group>
+            </group>
+            <notebook>
+              <page string = "客户列表">
+                <field name="crm_ids">
+                  <tree string = "客户列表" create ="1" edit ="1" delete = "1">
+                  <field name="name"/>
+                  <field name="is_done"/>
+                  <field name="deadline"/>
+                  <field name="priority"/>
+                  <field name="is_expired"/>
+
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_task_list">
+      <field name="name">Todo Task List</field>
+      <field name="model">crm.task</field>
+      <field name="arch" type="xml">
+        <tree string = "Todo" decoration-danger = "is_expired">
+          <field name="name"/>
+          <field name="category_id"/>
+          <field name="priority"/>
+          <field name="is_done"/>
+          <field name="deadline"/>
+          <field name="is_expired"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+<!--    <record model="ir.ui.view" id="crm_task_list">-->
+<!--      <field name="name">Todo Task List</field>-->
+<!--      <field name="model">crm.task</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--        <tree string = "Todo" decoration-danger = "is_expired">-->
+<!--          <field name="name"/>-->
+<!--          <field name="category_id"/>-->
+<!--          <field name="is_done"/>-->
+<!--          <field name="deadline"/>-->
+<!--          <field name="priority"/>-->
+<!--          <field name="is_expired"/>-->
+<!--        </tree>-->
+<!--      </field>-->
+<!--    </record>-->
+
+
+
+
+
+
+<!--    <record model="ir.ui.view" id="crm_task_form">-->
+<!--      <field name="name">Todo Task Form</field>-->
+<!--      <field name="model">crm.task</field>-->
+<!--      <field name="arch" type  ='xml'>-->
+<!--        <form>-->
+<!--          <sheet>-->
+<!--            <group>-->
+<!--              <group>-->
+<!--                <field name="name"/>-->
+<!--                <field name="category_id"/>-->
+<!--                <field name="priority"/>-->
+<!--              </group>-->
+<!--              <group>-->
+<!--                <field name="is_done"/>-->
+<!--                <field name="deadline"/>-->
+<!--                <field name="is_expired"/>-->
+<!--              </group>-->
+<!--            </group>-->
+<!--          </sheet>-->
+<!--        </form>-->
+<!--      </field>-->
+<!--    </record>-->
+
+<!--    <record id="kanban_all_qingjiadan" model="ir.ui.view">-->
+<!--      <field name="model">crm.task</field>-->
+<!--       <field name="type">kanban</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--        <kanban>-->
+<!--          <field name="name"></field>-->
+<!--          <templates>-->
+<!--            <t t-name="kanban-box">-->
+<!--              <div class="oe_kanban_card">-->
+<!--                <a type="open">-->
+<!--                  <t>客户名称：</t>-->
+<!--                  <field name="name"/>-->
+<!--                  <t><br/></t>-->
+<!--                  <t>客户类别是：</t>-->
+<!--                  <field name="category_id"/>-->
+<!--                  <t><br/></t>-->
+<!--                  <t>客户优先级：</t>-->
+<!--                  <field name="priority"/>-->
+<!--                  <t><br/></t>-->
+<!--                  <t> 到期时间：</t>-->
+<!--                  <field name="deadline"/>-->
+<!--                       <t><br/></t>-->
+<!--                  <t> 是否到期：</t>-->
+<!--                  <field name="is_expired"/>-->
+<!--                       <t><br/></t>-->
+<!--                  <t> 是否已完成：</t>-->
+<!--                  <field name="is_expired"/>-->
+<!--                  <form>-->
+<!--                    <sheet>-->
+<!--                      <group>-->
+<!--                        <group>-->
+<!--                           <field name="name"/>-->
+<!--                           <field name="category_id"/>-->
+<!--                           <field name="priority"/>-->
+<!--                         </group>-->
+<!--                         <group>-->
+<!--                          <field name="is_done"/>-->
+<!--                          <field name="deadline"/><field name="is_expired"/>-->
+<!--                         </group>-->
+<!--                      </group>-->
+<!--                    </sheet>-->
+<!--                  </form>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--            </t>-->
+<!--          </templates>-->
+<!--        </kanban>-->
+<!--      </field>-->
+<!--    </record>-->
+
+
+
+<!--    <record model="ir.ui.view" id="bicon_base_goods_kanban">-->
+<!--            <field name="name">商品档案kanban视图</field>-->
+<!--            <field name="model">crm.task</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <kanban class="o_modules_kanban" >-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="category_id"/>-->
+<!--                    <field name="priority"/>-->
+<!--                    <templates>-->
+<!--                        <t t-name="kanban-box" >-->
+<!--                            <div class="oe_kanban_global_click" >-->
+<!--                                <div class="oe_module_desc">-->
+<!--                                    <h4>-->
+<!--                                      <field name="name"/>-->
+<!--                                    </h4>-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                  <h6>-->
+<!--                                      <field name="category_id"/>-->
+<!--                                      <field name="priority"/>-->
+<!--                                      <field name="is_done"/>-->
+<!--                                      <field name="deadline"/>-->
+<!--                                      <field name="is_expired"/>-->
+
+<!--                                  </h6>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                        </t>-->
+<!--                    </templates>-->
+<!--                </kanban>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+
+       <record model="ir.ui.view" id="session_kanban">
+        <field name="name">客户看板3</field>
+        <field name="model">crm.task</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="category_id">
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div
+                                t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}
+                                                  width: 400px;">
+                            <div class="oe_dropdown_kanban">
+                                <!-- dropdown menu -->
+                                <div class="oe_dropdown_toggle">
+                                    <i class="fa fa-bars fa-lg"/>
+                                    <ul class="oe_dropdown_menu">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker"
+                                                data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+
+                                <div class="oe_clear"></div>
+                            </div>
+                            <div t-attf-class="oe_kanban_content">
+                                <!-- title -->
+                                <div class="oe_kanban_bottom_left" style="display:inline;"  >
+                                  客户名字:
+                                  <field name="name" />
+                                  <br/>
+                                  客户优先级:
+                                  <field name="priority" widget="priority"/>
+
+                                </div>
+                                <div class="oe_kanban_bottom_right" style="display:inline;">
+                                  <br/>
+                                  客户类目:
+                                  <field name="category_id" widget="kanban_state_selection"/>
+                                  <br/>
+                                  截止时间:
+                                  <field name="deadline"/>
+                                 </div>
+                            </div>
+
+                            <div class="oe_kanban_card">
+                              <a type="open">
+                                 <t>是否已完成：</t>
+                                 <field name="is_done"/>
+                                 <t><br/></t>
+                                 <t>是否已过期：</t>
+                                 <field name="is_expired"/>
+
+                              </a>
+                            </div>
+
+
+                            <div class="oe_kanban_footer">
+                                  <div class="oe_kanban_footer_left">
+                                    <field name="deadline" />
+                                    <!-- Left hand footer... -->
+                                  </div>
+                                  <div class="oe_kanban_footer_right">
+                                    <field name="category_id" />
+                                    <!-- Right hand footer... -->
+                                  </div>
+                            </div>
+
+
+<!--                            <div class="oe_kanban_footer">-->
+<!--                                  <div class="oe_kanban_footer_left">-->
+<!--                                    <field name="deadline" />-->
+<!--                                    &lt;!&ndash; Left hand footer... &ndash;&gt;-->
+<!--                                  </div>-->
+<!--                                  <div class="oe_kanban_footer_right">-->
+<!--                                    <field name="category_id" />-->
+<!--                                    &lt;!&ndash; Right hand footer... &ndash;&gt;-->
+<!--                                  </div>-->
+<!--                             </div>-->
+
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_kanban3_qingjiadan_kanban">
+        <field name="name">客户班级列表</field>
+        <field name="res_model">crm.task</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form,calendar,graph,kanban</field>
+    </record>
+
+
+
+
+
+    <record model="ir.actions.act_window" id="act_crm_task_win">
+      <field name="name">待办事务事项</field>
+      <field name="res_model">crm.task</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_crm_category_win">
+      <field name="name">客户类目管理</field>
+      <field name="res_model">crm.category</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- 视图动作 -->
+    <act_window id="action_qingjia_qingjiadan_kanban"
+               name="客户列表看板1"
+               res_model="crm.task"
+               view_mode="kanban"/>
+
+    <act_window id="action_kanban2_qingjiadan_kanban"
+               name="客户列表看板2"
+               res_model="crm.task"
+               view_mode="kanban,form"/>
+
+
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="act_todo_task_server">
+      <field name="name">Todo task window</field>
+      <field name="model_id" ref="model_todo_task"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+   -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="CRM" id="menu_root"/>
+
+    <menuitem name="crm客户档案信息" id="menu_crm_manager" parent="menu_root"/>
+    <menuitem name="crm渠道合同资料" id="menu_crm_hetong" parent="menu_root"/>
+
+    <!--
+    <menuitem name="Menu 2" id="todo.menu_2" parent="todo.menu_root"/>
+    -->
+    <!-- actions -->
+
+
+    <menuitem name="类别管理" id="menu_crm_category_list" parent="menu_crm_manager"
+              action="act_crm_category_win" sequence ="9"/>
+
+    <menuitem name="具体待办事项" id="menu_crm_task_list" parent="menu_crm_manager"
+              action="act_crm_task_win" sequence ="60"/>
+
+    <menuitem name="渠道合同" id="menu_crm_hetong_list" parent="menu_crm_hetong"
+              action="act_crm_task_win" sequence ="60"/>
+
+<!--
+    <menuitem name="Server to list" id="todo" parent="todo.menu_2"
+              action="todo.action_server"/>
+-->
+    <!-- 二级菜单 -->
+    <menuitem name="看板1" id="menu_qingjia_qingjiadan_kanban1" parent="menu_crm_hetong" action="action_qingjia_qingjiadan_kanban"/>
+
+    <menuitem name="看板2" id="menu_qingjia_qingjiadan_kanban2" parent="menu_crm_hetong" action="action_kanban2_qingjiadan_kanban"/>
+
+    <menuitem name="看板2" id="menu_qingjia_qingjiadan_kanban3" parent="menu_crm_hetong" action="action_kanban3_qingjiadan_kanban"/>
+
+
+
+
+
+
+
+  </data>
+</odoo>
