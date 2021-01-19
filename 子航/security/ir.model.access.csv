@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_zhubo_xiaoshoushuju_user,zhubo_xiaoshoushuju,model_zhubo_xiaoshoushuju,base.group_user,1,1,1,1
-access_zhubo_fenlei_user,zhubo_fenlei,model_zhubo_fenlei,base.group_user,1,1,1,1
-access_anchor_information_user,anchor_information,model_anchor_information,base.group_user,1,1,1,1
-access_anchor_sales_data_user,anchor_sales_data,model_anchor_sales_data,base.group_user,1,1,1,1
