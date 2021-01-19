@@ -18,7 +18,7 @@
       </field>
     </record>
 
-->
+
 
     <!-- actions opening views on models -->
 
@@ -27,7 +27,7 @@
       <field name="res_model">shangwudingdan</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
 
     <!-- server action to the one above -->
 
@@ -50,24 +50,24 @@
 <!--        }-->
 <!--      </field>-->
 <!--    </record>-->
--->
+
 
     <!-- Top menu item -->
 
     <menuitem name="商务订单" id="swdd.menu_root" web_icon= "swdd,static/description/icon.png"/>
--->
+
     <!-- menu categories -->
 
     <menuitem name="合作登记表1对多" id="swdd.menu_2" parent="swdd.menu_root" sequence="0"  action="shangwudingdan_action_window"/>
     <menuitem name="合作登记表汇总" id="swdd.menu_1" parent="swdd.menu_root" sequence="1"  action="shangwudingdan1_action_window"/>
 
--->
+
     <!-- actions -->
 
 <!--    <menuitem name="12" id="kk小喵.menu_1_list" parent="kk小喵.menu_1"-->
 <!--              action="kk小喵.action_window"/>-->
 <!--    <menuitem name="1123" id="kk小喵" parent="kk小喵.menu_2"-->
 <!--              action="kk小喵.action_server"/>-->
--->
+
   </data>
 </odoo>

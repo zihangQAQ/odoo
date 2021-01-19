@@ -60,7 +60,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="HR" id="mhr.menu_root"/>
+    <menuitem name="HR" id="mhr.menu_root" web_icon= "mhr,static/description/icon.png"/>
 -->
     <!-- menu categories -->
 

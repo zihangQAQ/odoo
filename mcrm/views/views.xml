@@ -38,7 +38,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="商务CRM" id="mcrm_menu_root"/>
+    <menuitem name="商务CRM" id="mcrm_menu_root" web_icon= "mcrm,static/description/icon.png"/>
 -->
     <!-- menu categories -->
 
