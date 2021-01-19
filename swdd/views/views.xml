@@ -6,39 +6,25 @@
       <field name="name">小 list</field>
       <field name="model">shangwudingdan</field>
       <field name="arch" type="xml">
-        <tree editable="bottom">
+<!--        <tree editable="bottom">-->
           <field name="name"/>
           <field name="name2"/>
-          <field name="name3"/>
-          <field name="name4"/>
-          <field name="is_done"/>
-          <field name="is_done2"/>
           <field name="priority"/>
           <field name="test_time"/>
-          <field name="priority3"/>
-        </tree>
+          <field name="priority2"/>
+          <field name="zhubobaojiamingxi"/>
+
+<!--        </tree>-->
       </field>
     </record>
 
-
-    <record model="ir.ui.view" id="商务订单1_list">
-      <field name="name">喵 list </field>
-      <field name="model">shangwudingdan1</field>
-      <field name="arch" type="xml">
-        <tree editable="bottom">
-          <field name="name"/>
-
-
-        </tree>
-      </field>
-    </record>
-<!--&ndash;&gt;-->
+->
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="shangwudingdan_action_window">
       <field name="name">1对多2.0</field>
-      <field name="res_model">xuanpinku</field>
+      <field name="res_model">shangwudingdan</field>
       <field name="view_mode">tree,form</field>
     </record>
 -->
@@ -48,7 +34,7 @@
 
     <record model="ir.actions.act_window" id="shangwudingdan1_action_window">
       <field name="name">汇总表</field>
-      <field name="res_model">xuanpinchi</field>
+      <field name="res_model">shangwudingdan1</field>
       <field name="view_mode">tree,form</field>
     </record>
 

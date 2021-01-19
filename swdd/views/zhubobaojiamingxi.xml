@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+    <record model="ir.ui.view" id="shangwudingdan1_list">
+      <field name="name">喵 list </field>
+      <field name="model">shangwudingdan1</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group col = '2'>
+              <group>
+                  <field name="name"/>
+                  <field name="name2"/>
+
+              </group>
+              <group>
+                  <field name="name3"/>
+                  <field name="name4"/>
+                  <field name="test_time"/>
+                  <field name="priority"/>
+              </group>
+            </group>
+            <notebook>
+                <page string = "客户列表">
+                    <field name="ceshi"/>
+                </page>
+            </notebook>
+
+
+          </sheet>
+        </form>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>
